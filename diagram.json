@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "author": "Anonymous maker",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-pi-pico",
+      "id": "pico",
+      "top": 0,
+      "left": 0,
+      "attrs": { "env": "micropython-20230426-v1.20.0" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn2",
+      "top": -13,
+      "left": -144,
+      "attrs": { "color": "green", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 50,
+      "left": -186.71,
+      "attrs": { "color": "white" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 94.31,
+      "left": -125.61,
+      "attrs": { "value": "1000" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 102.38,
+      "left": 178.82,
+      "attrs": { "color": "yellow", "bounce": "0" }
+    },
+    {
+      "type": "wokwi-led-ring",
+      "id": "ring1",
+      "top": 77.28,
+      "left": 266.51,
+      "attrs": { "pixels": "16" }
+    },
+    {
+      "type": "wokwi-pir-motion-sensor",
+      "id": "pir1",
+      "top": -125.74,
+      "left": 119.02,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "btn2:1.r", "pico:GP0", "green", [ "v0" ] ],
+    [ "btn2:2.r", "pico:GND.1", "black", [ "h0" ] ],
+    [ "r1:2", "pico:GP2", "white", [ "v0" ] ],
+    [ "led1:C", "pico:GND.2", "black", [ "v31.24", "h177.71" ] ],
+    [ "led1:A", "r1:1", "white", [ "v0" ] ],
+    [ "ring1:GND", "pico:GND.5", "black", [ "v20.12", "h-186.85", "v-74.41" ] ],
+    [ "ring1:VCC", "pico:VBUS", "red", [ "v2.63", "h-260.52" ] ],
+    [ "ring1:DIN", "pico:GP16", "green", [ "v0" ] ],
+    [ "pir1:VCC", "pico:VBUS", "red", [ "v0" ] ],
+    [ "pir1:GND", "pico:GND.8", "black", [ "v0" ] ],
+    [ "pir1:OUT", "pico:GP28", "green", [ "v0" ] ],
+    [ "btn1:1.l", "pico:GP22", "green", [ "h0" ] ],
+    [ "btn1:2.l", "pico:GND.6", "black", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
